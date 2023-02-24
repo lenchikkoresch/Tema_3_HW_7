@@ -31,36 +31,37 @@ int GetNumber(string message)
     return result;
 }
 
-//array[i] = rand.NextDouble();
+
 // Инициализируется матрица
 double[,] DoublMatrix(int rows, int columns)
 {
-double[,] matrix = new double[rows, columns];
-Random rand = new Random();
-for (int i = 0; i < rows; i++) 
-{
-for (int j = 0; j < columns; j++)
-{
-matrix[i,j] = rand.NextDouble();
-}
-}
-return matrix;
+    double[,] matrix = new double[rows, columns];
+    Random rand = new Random();
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            matrix[i, j] = rand.NextDouble();
+        }
+    }
+    return matrix;
 }
 
 
-
+//вывод матрицы на экран
 void PrintMatrix(double[,] matrix)
 {
-for (int i = 0; i < matrix.GetLength(0); i++)
-{
-for (int j = 0; j < matrix.GetLength(1); j++)
-{
-Console.Write($"{matrix[i,j]} ");
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write($"{matrix[i, j]} ");
+        }
+
+        Console.WriteLine();
+    }
 }
 
-Console.WriteLine();
-}
-}
 
 int countOfRows = GetNumber("Введите кол-во строк:");
 int countOfColumns = GetNumber("Введите кол-во столбцов:");
